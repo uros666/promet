@@ -1,0 +1,30 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 20px;
+}
+
+button {
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+/* Styles for index.html (Main Page) */
+.main-page {
+  background-color: brown;
+  color: black;
+}
+
+/* Styles for index1.html (Page 1) */
+.page1 {
+  background-color: #003366; /* Deep Sea Blue */
+  color: green;
+}
+
+/* Styles for index2.html (Page 2) */
+.page2 {
+  background-color: purple;
+  color: red;
+}
