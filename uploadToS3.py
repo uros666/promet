@@ -12,7 +12,17 @@ def main():
     args = parser.parse_args()
     file_path = args.file_path
     bucket_name = args.bucket or 'alma-web-uros'
-    key = args.key or os.path.basename(file_path)
+    # Dobi končnico iz izvorne datoteke
+    source_ext = os.path.splitext(file_path)[1]
+    if args.key:
+        key_root, key_ext = os.path.splitext(args.key)
+        # Če key nima končnice ali ima napačno, popravi
+        if key_ext.lower() != source_ext.lower():
+            key = f"{key_root}{source_ext}"
+        else:
+            key = args.key
+    else:
+        key = os.path.basename(file_path)
 
     # Get file metadata
     mime_type, _ = mimetypes.guess_type(file_path)
